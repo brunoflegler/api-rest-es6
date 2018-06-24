@@ -7,7 +7,7 @@ export const create = (req, res) => {
 			res.send(user)
 		})
 		.catch((err) => {
-			res.status(400).send(err)
+			res.status(404).send(err)
 		})
 }
 
@@ -37,8 +37,8 @@ export const find = (req, res) => {
 export const remove = (req, res) => {
 	const id = req.params.id
 	domain.remove(id)
-		.then((docs) => {
-			res.status(200).send(docs)
+		.then(() => {
+			res.status(200).send({message: 'User removed successfully'})
 		})
 		.catch((err) => {
 			res.status(400).send(err)

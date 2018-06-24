@@ -30,5 +30,9 @@
 		"mocha": "^5.2.0",
 		"moment": "^2.22.2",
 		"mongoose": "^5.1.6"
-	}
+	},
+	"apidoc": {
+    "title": "Custom apiDoc browser title",
+    "url" : "https://api-rest-model.herokuapp.com"
+  }
 }

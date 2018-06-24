@@ -1,4 +1,9 @@
 {
+	"db_config1": {
+		"host": "localhost",
+		"port": 27017,
+		"name": "test"
+	},
 	"db_config": {
 		"host": "bruno.dalcol:213590@ds119091.mlab.com",
 		"port": 19091,
