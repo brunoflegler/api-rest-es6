@@ -41,7 +41,7 @@ export const remove = (req, res) => {
 			res.status(200).send({message: 'User removed successfully'})
 		})
 		.catch((err) => {
-			res.status(400).send(err)
+			res.status(404).send(err)
 		})
 }
 

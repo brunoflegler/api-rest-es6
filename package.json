@@ -26,13 +26,14 @@
 		"body-parser": "^1.18.3",
 		"chai-http": "^4.0.0",
 		"express": "^4.16.3",
+		"express-rate-limit": "^2.11.0",
 		"jwt-simple": "^0.5.1",
 		"mocha": "^5.2.0",
 		"moment": "^2.22.2",
 		"mongoose": "^5.1.6"
 	},
 	"apidoc": {
-    "title": "Custom apiDoc browser title",
-    "url" : "https://api-rest-model.herokuapp.com"
-  }
+		"title": "Document API",
+		"url": "https://api-rest-model.herokuapp.com"
+	}
 }

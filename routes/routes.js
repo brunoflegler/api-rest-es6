@@ -2,9 +2,20 @@
 
 import * as users from './users'
 import ensureAuthenticated from '../functions/ensure-authenticated'
+import RateLimit from 'express-rate-limit'
+
+const createAccountLimiter = new RateLimit({
+	windowMs: 60 * 60 * 1000, // 1 hour window
+	//delayAfter: 1, // begin slowing down responses after the first request
+	delayMs: 0, // slow down subsequent responses by 3 seconds per request
+	max: 10, // start blocking after 5 requests
+	message: 'Too many accounts created from this IP, please try again after an hour'
+})
 
 
 export const assign = (app) => {
+
+	app.use(createAccountLimiter)
 
 	/**
 	 * @api {post} /oauth/login Authenticate a user
@@ -58,6 +69,8 @@ export const assign = (app) => {
 	 * 		HTTP/1.1 401 Unauthorized
 	 * @apiErrorExample {json} Request Timeout
 	 * 		HTTP/1.1 408 Token has expired
+	 * @apiErrorExample {json} Too Many Requests
+	 * 		HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour
 	*/
 	app.get('/users/:id', ensureAuthenticated, users.findById)
 	/**
@@ -86,6 +99,8 @@ export const assign = (app) => {
 	 * 		HTTP/1.1 401 Unauthorized
 	 * @apiErrorExample {json} Request Timeout
 	 * 		HTTP/1.1 408 Token has expired
+	 * @apiErrorExample {json} Too Many Requests
+	 * 		HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour
 	*/
 	app.get('/users', ensureAuthenticated, users.find)
 	/**
@@ -122,6 +137,8 @@ export const assign = (app) => {
 	 * 		HTTP/1.1 401 Unauthorized
 	 * @apiErrorExample {json} Request Timeout
 	 * 		HTTP/1.1 408 Token has expired
+	 * @apiErrorExample {json} Too Many Requests
+	 * 		HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour
 	*/
 	app.post('/users', ensureAuthenticated, users.create)
 	/**
@@ -141,6 +158,8 @@ export const assign = (app) => {
 	 * 		HTTP/1.1 401 Unauthorized
 	 * @apiErrorExample {json} Request Timeout
 	 * 		HTTP/1.1 408 Token has expired
+	 * @apiErrorExample {json} Too Many Requests
+	 * 		HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour
 	*/
 	app.delete('/users/:id', ensureAuthenticated, users.remove)
 
