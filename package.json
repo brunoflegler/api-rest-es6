@@ -4,9 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js --exec babel-node --presets latest,stage-3",
+    "start": "nodemon server.js --exec babel-node --presets latest,stage-3",
 		"test": "mocha --compilers js:babel-core/register",
-		"heroku-postbuild": "npm run start"
+		"dev": "babel-node --presets latest,stage-3 server.js",
+		"heroku-postbuild": "npm run dev"
   },
   "keywords": [],
   "author": "",
