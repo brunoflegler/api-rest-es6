@@ -98,6 +98,11 @@ define({ "api": [
           "title": "Request Timeout",
           "content": "HTTP/1.1 408 Token has expired",
           "type": "json"
+        },
+        {
+          "title": "Too Many Requests",
+          "content": "HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour",
+          "type": "json"
         }
       ]
     },
@@ -192,6 +197,11 @@ define({ "api": [
         {
           "title": "Request Timeout",
           "content": "HTTP/1.1 408 Token has expired",
+          "type": "json"
+        },
+        {
+          "title": "Too Many Requests",
+          "content": "HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour",
           "type": "json"
         }
       ]
@@ -301,6 +311,11 @@ define({ "api": [
           "title": "Request Timeout",
           "content": "HTTP/1.1 408 Token has expired",
           "type": "json"
+        },
+        {
+          "title": "Too Many Requests",
+          "content": "HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour",
+          "type": "json"
         }
       ]
     },
@@ -402,6 +417,11 @@ define({ "api": [
         {
           "title": "Request Timeout",
           "content": "HTTP/1.1 408 Token has expired",
+          "type": "json"
+        },
+        {
+          "title": "Too Many Requests",
+          "content": "HTTP/1.1 429 Too many accounts created from this IP, please try again after an hour",
           "type": "json"
         }
       ]
