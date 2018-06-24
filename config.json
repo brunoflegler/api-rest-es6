@@ -1,8 +1,8 @@
 {
 	"db_config": {
-		"host": "bruno.dalcol:213590@ds119091.mlab.com",
-		"port": 19091,
-		"name": "watcherdb"
+		"host": "localhost",
+		"port": 27017,
+		"name": "test"
 	},
 	"oauth": {
 		"TOKEN_SECRET": "8d738752d7f9ed217305f401900092d6",
