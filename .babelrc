@@ -1,0 +1,9 @@
+{
+  "env": {},
+  "ignore": [],
+  "plugins": [],
+  "presets": [
+    "latest",
+    "stage-3"
+  ]
+}
