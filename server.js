@@ -27,7 +27,7 @@ DBConnectMongoose().then(() => {
 
 
 }).catch((err) => {
-	console.log('Error: ' + err)
+	console.log('Error: ' + err.message)
 })
 
 

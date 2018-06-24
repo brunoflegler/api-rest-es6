@@ -1,35 +1,34 @@
 {
-  "name": "api-rest-es6",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets latest,stage-3",
-		"test": "mocha --compilers js:babel-core/register",
-		"dev": "babel-node --presets latest,stage-3 server.js",
-		"heroku-postbuild": "npm run dev"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "chai": "^4.1.2",
-    "eslint-config-google": "^0.9.1",
-    "request": "^2.87.0",
-    "should": "^13.2.1",
-    "supertest": "^3.1.0"
-  },
-  "dependencies": {
-    "bcrypt": "^2.0.1",
-    "body-parser": "^1.18.3",
-    "chai-http": "^4.0.0",
-    "express": "^4.16.3",
-    "jwt-simple": "^0.5.1",
-    "mocha": "^5.2.0",
-    "moment": "^2.22.2",
-    "mongoose": "^5.1.6"
-  }
+	"name": "api-rest-es6",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"server": "nodemon server.js --exec babel-node",
+		"heroku-postbuild": "npm install",
+		"start": "babel-node server.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-latest": "^6.24.1",
+		"babel-preset-stage-3": "^6.24.1",
+		"chai": "^4.1.2",
+		"eslint-config-google": "^0.9.1",
+		"request": "^2.87.0",
+		"should": "^13.2.1",
+		"supertest": "^3.1.0"
+	},
+	"dependencies": {
+		"bcrypt": "^2.0.1",
+		"body-parser": "^1.18.3",
+		"chai-http": "^4.0.0",
+		"express": "^4.16.3",
+		"jwt-simple": "^0.5.1",
+		"mocha": "^5.2.0",
+		"moment": "^2.22.2",
+		"mongoose": "^5.1.6"
+	}
 }

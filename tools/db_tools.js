@@ -15,12 +15,10 @@ const DBConnectMongoose = () => {
 		// database connect
 		mongoose.connect('mongodb://' + config.db_config.host + ':' + config.db_config.port + '/' + config.db_config.name)
 			.then(() => {
-				console.log('mongo connection created')
-				resolve(db)
+				resolve({ message: 'mongo connection created' })
 			})
-			.catch(err => {
-				console.log('error creating db connection: ' + err)
-				reject(db)
+			.catch(() => {
+				reject(reject({ message: 'mongo connection error' }))
 			})
 	})
 }
