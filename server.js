@@ -12,16 +12,19 @@ DBConnectMongoose().then(() => {
 	// this will let us get the data from a POST
 	app.use(bodyparser.urlencoded({ extended: true }))
 	app.use(bodyparser.json({ limit: '10mb' }))
-	app.use(express.static('public/apidoc'))
+	app.use(express.static(__dirname + '/public/apidoc'))
+
 
 	//configure routes
 	routes.assign(app)
 
-	const port = process.env.PORT || 3000,
+	const port = process.env.PORT || 8080,
 		ip = process.env.IP || '0.0.0.0'
 
-	app.listen(port, ip)
-	console.log('Server listening on port 3000')
+	app.listen(port, ip, () => {
+		console.log('Server listening on port 8080')
+	})
+
 
 }).catch((err) => {
 	console.log('Error: ' + err)
