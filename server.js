@@ -17,7 +17,12 @@ DBConnectMongoose().then(() => {
 	//configure routes
 	routes.assign(app)
 
-	app.listen(3000)
+
+
+	const port = process.env.PORT || 3000,
+		ip = process.env.IP || '0.0.0.0'
+
+	app.listen(port, ip)
 	console.log('Server listening on port 3000')
 
 }).catch((err) => {
