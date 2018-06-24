@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets latest,stage-3",
+    "start": "node server.js --exec babel-node --presets latest,stage-3",
 		"test": "mocha --compilers js:babel-core/register",
 		"heroku-postbuild": "npm run start"
   },
